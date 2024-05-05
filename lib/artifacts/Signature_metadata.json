@@ -1,0 +1,70 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_ethSignedMessageHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_signature",
+						"type": "bytes"
+					}
+				],
+				"name": "recoverSignerPublic",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"lib/Signature.sol": "Signature"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"lib/Signature.sol": {
+			"keccak256": "0x91841d397bd08562a21feb9ae26a27ecccab298f34d4beba24af671700e79865",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://eeb303b2f836fd270682c843bfcced7b9fafba2977c83cdf64681f89da8cd829",
+				"dweb:/ipfs/QmR5DdKBs8Qrc4TsWLW7Wr2SpAeARhD8dXzhWgPRJD2WRs"
+			]
+		}
+	},
+	"version": 1
+}

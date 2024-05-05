@@ -1,0 +1,81 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "onERC721Received",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Interface of ERC721 token receiver.",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"UmiverseNFT_flattened.sol": "ERC721A__IERC721Receiver"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"UmiverseNFT_flattened.sol": {
+			"keccak256": "0x33aed1f76e3cea049d3816fe4859cddaf19149c78a8a7166cb321a7e0ca09360",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://de32cd3034c1bd2511ff5a87b50341c412d18e33b73f348e45ad1db226c22fca",
+				"dweb:/ipfs/QmVpBgbA5fiMvtoZVSC6fnQ8YinRp8aaH7qqXgJHMsq6Gj"
+			]
+		}
+	},
+	"version": 1
+}

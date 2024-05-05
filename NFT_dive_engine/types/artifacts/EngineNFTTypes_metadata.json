@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"NFT_dive_engine/types/EngineNFTTypes.sol": "EngineNFTTypes"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"NFT_dive_engine/types/EngineNFTTypes.sol": {
+			"keccak256": "0x6de5030a065f046d264c046e109874fd6e95b7a6cacfe22788551a08d0966d70",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://29ad18266b725453e268b3d580aba67745e12ef541c2d2b2a7c32ae1a758f89f",
+				"dweb:/ipfs/QmbQiguzXMWzkLVFCUkGW5vCJZVCkoNTqew7WFCadERmEP"
+			]
+		}
+	},
+	"version": 1
+}

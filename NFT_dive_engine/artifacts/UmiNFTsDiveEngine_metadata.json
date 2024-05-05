@@ -1,0 +1,407 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract UmiDiveEngineNFT",
+						"name": "_engineNFTContract",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IERC20",
+						"name": "_token",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "target",
+						"type": "address"
+					}
+				],
+				"name": "AddressEmptyCode",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "AddressInsufficientBalance",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "FailedInnerCall",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "SafeERC20FailedOperation",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "gameId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "divePoint",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "turbineTokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "driveTrainTokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "capacitorTokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "conversionDivePoint",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "engineNFTContract",
+				"outputs": [
+					{
+						"internalType": "contract UmiDiveEngineNFT",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawERC20",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawETH",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"AddressEmptyCode(address)": [
+					{
+						"details": "There's no code at `target` (it is not a contract)."
+					}
+				],
+				"AddressInsufficientBalance(address)": [
+					{
+						"details": "The ETH balance of the account is not enough to perform the operation."
+					}
+				],
+				"FailedInnerCall()": [
+					{
+						"details": "A call to an address target failed. The target may have reverted."
+					}
+				],
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				],
+				"SafeERC20FailedOperation(address)": [
+					{
+						"details": "An operation with an ERC20 token failed."
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"NFT_dive_engine/UmiNFTsDiveEngine.sol": "UmiNFTsDiveEngine"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
+				"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol": {
+			"keccak256": "0x6008dabfe393240d73d7dd7688033f72740d570aa422254d29a7dce8568f3aff",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f5196ec75139918c6c7bb4251b36395e668f1fa6d206beba7e7520e74913940d",
+				"dweb:/ipfs/QmSyqjksXxmm2mCG6qRd1yuwLykypkSVBbnBnGqJRcuJMi"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
+			"keccak256": "0x37bb49513c49c87c4642a891b13b63571bc87013dde806617aa1efb54605f386",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b3036b3a83b7c48f96641f2a9002b9f2dcb6a5958dd670894ada21ae8229b3d0",
+				"dweb:/ipfs/QmUNfSBdoVtjhETaUJCYcaC7pTMgbhht926tJ2uXJbiVd3"
+			]
+		},
+		"@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0xaf28a975a78550e45f65e559a3ad6a5ad43b9b8a37366999abd1b7084eb70721",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b7bd24e224f67f65bfadf85dc2929fa965456bb2415478bd0125471b5ce35245",
+				"dweb:/ipfs/QmRaydGr8BTHs1kvaZfsNU69pKzUAGFrvABn1KiRSbE51y"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"NFT_dive_engine/UmiDiveEngineNFT.sol": {
+			"keccak256": "0x97b8ea978f451f71b5c9f85d4147adb0483932c4b28559b3c731a7fd32fff592",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fe97f9decd12942a4052f6fb849e10e20d9d8587990ebe78c01e4826176507ae",
+				"dweb:/ipfs/QmZogtTc7jcFbGkut9LCFMkmMhTfNnDVBNhr9rcwRQZ84D"
+			]
+		},
+		"NFT_dive_engine/UmiNFTsDiveEngine.sol": {
+			"keccak256": "0x8b607297062b0b230041b0350a125cba1476b0bf6dadf3fb6b4fb493ee45c7d9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a185972df91f74c00e3ba7ca4f461e35e474cb7a71bf40a24b1cf82d32c72a9a",
+				"dweb:/ipfs/QmV5NtD1fTkSqn1HQ47oPCJn2YcemWRSYEBsvydEZFXJde"
+			]
+		},
+		"NFT_dive_engine/types/EngineNFTTypes.sol": {
+			"keccak256": "0x6de5030a065f046d264c046e109874fd6e95b7a6cacfe22788551a08d0966d70",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://29ad18266b725453e268b3d580aba67745e12ef541c2d2b2a7c32ae1a758f89f",
+				"dweb:/ipfs/QmbQiguzXMWzkLVFCUkGW5vCJZVCkoNTqew7WFCadERmEP"
+			]
+		},
+		"erc721a/contracts/ERC721A.sol": {
+			"keccak256": "0xede758d13ccce2f54a4bcd16816456109b290759d43988205539cf632f4c8a55",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b63befef8f79ec44ebe5db096767cab6772485c2b01a431759e7fcdcf7fd0bb1",
+				"dweb:/ipfs/QmV45KT2ai7PnVRhpJKjB29A15VGnhsvxxBFrrUSwhe2fr"
+			]
+		},
+		"erc721a/contracts/IERC721A.sol": {
+			"keccak256": "0xc9a2a00612e0d121aef3f716877ada17177d5b2d5a4c780d22cade46da2ff294",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1435542fc553d2fb9181191f126a1f97e2cc5570c2459c862f54ba415a22bf02",
+				"dweb:/ipfs/QmaQJ14ajkHgymY5TtoxHnpiN5u4TpwXCqKr2B6DM8SHkn"
+			]
+		},
+		"lib/SafeMath.sol": {
+			"keccak256": "0x073763efdf0e496d59f9e2a7518ef016a27f5158c15cd68667bad366a32ac908",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bafbb9a346710902f00d80d709d714c01b4da8960550f72d80f879f27febc763",
+				"dweb:/ipfs/QmZGerARfRQYQnHM16aJiJFyaHw9V8TXgU57xVwusE4KhZ"
+			]
+		},
+		"lib/Signature.sol": {
+			"keccak256": "0x91841d397bd08562a21feb9ae26a27ecccab298f34d4beba24af671700e79865",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://eeb303b2f836fd270682c843bfcced7b9fafba2977c83cdf64681f89da8cd829",
+				"dweb:/ipfs/QmR5DdKBs8Qrc4TsWLW7Wr2SpAeARhD8dXzhWgPRJD2WRs"
+			]
+		},
+		"lib/Strings.sol": {
+			"keccak256": "0xfb31b9639f8b517edc4f6b1f5ddc44e46b0051facb4583403493b5e29498151a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ed7e24df6aee3826db38b20c489116fe706c09d34a690a5aba5f50023d7b163d",
+				"dweb:/ipfs/QmZsBVwD4iU5Q4WTh6sYQMewhgeA7NgrswRyGaZHwKNPZX"
+			]
+		}
+	},
+	"version": 1
+}

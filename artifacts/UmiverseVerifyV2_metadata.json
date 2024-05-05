@@ -1,0 +1,110 @@
+{
+	"compiler": {
+		"version": "0.8.22+commit.4fc1097e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "getMessageHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_signer",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_signature",
+						"type": "bytes"
+					}
+				],
+				"name": "verify",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"UmiverseVerifyV2.sol": "UmiverseVerifyV2"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"UmiverseVerifyV2.sol": {
+			"keccak256": "0x3bcdf754b63fce1dcb1bdd77b8d069704044afe80cc3f1b4f93492ef3773f723",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://dd5ba210ab190e64cde0c86dd52c4926876f99547e1bd6ba0a8e665d95cd4451",
+				"dweb:/ipfs/QmY5eD2KeUMCLQYBkkHbLospZd8csBacY7ztsqiXiZgV51"
+			]
+		},
+		"lib/Signature.sol": {
+			"keccak256": "0x91841d397bd08562a21feb9ae26a27ecccab298f34d4beba24af671700e79865",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://eeb303b2f836fd270682c843bfcced7b9fafba2977c83cdf64681f89da8cd829",
+				"dweb:/ipfs/QmR5DdKBs8Qrc4TsWLW7Wr2SpAeARhD8dXzhWgPRJD2WRs"
+			]
+		},
+		"lib/Strings.sol": {
+			"keccak256": "0xfb31b9639f8b517edc4f6b1f5ddc44e46b0051facb4583403493b5e29498151a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ed7e24df6aee3826db38b20c489116fe706c09d34a690a5aba5f50023d7b163d",
+				"dweb:/ipfs/QmZsBVwD4iU5Q4WTh6sYQMewhgeA7NgrswRyGaZHwKNPZX"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,46 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "String operations.",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"UmiverseMarket_flattened.sol": "Strings"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"UmiverseMarket_flattened.sol": {
+			"keccak256": "0x2544981fb31a9f976fbfdaac68ffe94c53f636a88d5f5812b651ec276e1e237e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5c89481e07bc557b0d09c4515373c5952c433b10dbe8417e9abe8c9adcd473da",
+				"dweb:/ipfs/QmTahek7MPdYnSTT5jmJLCpjqKQVMawtH4TxssSkkuWUbn"
+			]
+		}
+	},
+	"version": 1
+}
