@@ -16,8 +16,8 @@ contract UmiversePresale is ERC2771Context {
     UMIVERSE public umiverseNFT;
     using SafeMath for uint256;
     // okbc testnet
-    IERC20 public usdt = IERC20(0xc2132D05D31c914a87C6611C10748AEb04B58e8F);
-    IERC20 public usdc = IERC20(0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359);
+    IERC20 public usdt = IERC20(0x0C958FF4F68f5b3E346e34aC89F19fEF50c71C5e);
+    IERC20 public usdc = IERC20(0x750ba8b76187092B0D1E87E28daaf484d1b5273b);
     IERC20 public umi = IERC20(address(0));
     IERC20 public eth = IERC20(address(0));
 
@@ -60,9 +60,9 @@ contract UmiversePresale is ERC2771Context {
         umiverseNFT = _umiverseNFT;
     }
 
-    modifier onlyTrustedForwarder() {
+    modifier onlyTrustedForwarder(address sender) {
         require(
-            isTrustedForwarder(msg.sender),
+            isTrustedForwarder(msg.sender) || sender == msg.sender,
             "Only callable by Trusted Forwarder"
         );
         _;
@@ -124,7 +124,7 @@ contract UmiversePresale is ERC2771Context {
         string memory _priceType,
         uint256 timestamp,
         bytes memory _signature
-    ) public onlyTrustedForwarder {
+    ) public onlyTrustedForwarder(sender) {
         require(sender != address(0), "CV: buyer to the zero address");
         require(
             verify(
@@ -138,6 +138,7 @@ contract UmiversePresale is ERC2771Context {
             ),
             "CV: invalid _signature"
         );
+        require(orders[nftid].sender == address(0), "This equipment has been sold.");
 
         IERC20 sendToken;
         if (price > 0) {

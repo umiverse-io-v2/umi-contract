@@ -25,8 +25,8 @@ contract UmiverseMarket is Ownable, ERC2771Context {
     address public signerAddress; // get from backend private key
 
     // okbc testnet
-    IERC20 public usdt = IERC20(0x0E9bB892A38d60B53085Af77eda888790Ef1DD33);
-    IERC20 public usdc = IERC20(0x7FC5e3e61700E34218a00cC01E92957A4e6C8883);
+    IERC20 public usdt = IERC20(0x21b81F2Cc97334031EfAfF3b93d8F846e02Ad0bc);
+    IERC20 public usdc = IERC20(0x63Eb5CCD29905BDeB83f1889C84d4Bf884038d2F);
     IERC20 public umi = IERC20(address(0));
     IERC20 public eth = IERC20(address(0));
 

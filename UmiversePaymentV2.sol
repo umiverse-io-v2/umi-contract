@@ -19,8 +19,8 @@ contract UmiversePaymentV2 is ERC2771Context {
     address public feeAddress; // umi
     address public rewardPoolAddress; //reward pool
 
-    IERC20 public usdt = IERC20(0xc2132D05D31c914a87C6611C10748AEb04B58e8F);
-    IERC20 public usdc = IERC20(0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359);
+    IERC20 public usdt = IERC20(0x21b81F2Cc97334031EfAfF3b93d8F846e02Ad0bc);
+    IERC20 public usdc = IERC20(0x63Eb5CCD29905BDeB83f1889C84d4Bf884038d2F);
     IERC20 public umi = IERC20(address(0));
     IERC20 public eth = IERC20(address(0));
 

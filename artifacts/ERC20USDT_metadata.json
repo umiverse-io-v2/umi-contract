@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.25+commit.b61c2a91"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -223,7 +223,7 @@
 						"type": "uint8"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
@@ -424,13 +424,13 @@
 		"compilationTarget": {
 			"FakeUsdt.sol": "ERC20USDT"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
@@ -477,11 +477,11 @@
 			]
 		},
 		"FakeUsdt.sol": {
-			"keccak256": "0xf2f9bc13c5aff290af1e6a5eefb15509e84ee939b4ec0baff1daf8030712ae83",
+			"keccak256": "0x4d1e178d71f51b9961d100486adf74184885e912dfdaa445ea9bfa5f0d8ead74",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6f22b0957ff94ac456969a3c204862c37fadb1389701c11021fb3fece11a9568",
-				"dweb:/ipfs/QmdhttRp6egXvcsssiRushjPEorefQYRAWp46h82XHWN98"
+				"bzz-raw://f0d922799b41212e16bd66c663da0a2182ca3632a14ca60ebbd06c4bbad9b7e5",
+				"dweb:/ipfs/QmfMLuVVyoNCj3uNH7sZBhqPadjigVx3gHaaXW6tFY9TB6"
 			]
 		}
 	},

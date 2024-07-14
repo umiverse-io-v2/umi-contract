@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.22+commit.4fc1097e"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -8,41 +8,22 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "message",
-						"type": "string"
-					}
-				],
-				"name": "getMessageHash",
-				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "",
-						"type": "bytes32"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "address",
-						"name": "_signer",
+						"name": "signer",
 						"type": "address"
 					},
 					{
-						"internalType": "string",
-						"name": "message",
-						"type": "string"
+						"internalType": "bytes32",
+						"name": "hash",
+						"type": "bytes32"
 					},
 					{
 						"internalType": "bytes",
-						"name": "_signature",
+						"name": "signature",
 						"type": "bytes"
 					}
 				],
-				"name": "verify",
+				"name": "isValidERC1271Signature",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -50,7 +31,36 @@
 						"type": "bool"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "signer",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "hash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "isValidSignature",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -81,28 +91,36 @@
 		"remappings": []
 	},
 	"sources": {
+		"@openzeppelin/contracts/interfaces/IERC1271.sol": {
+			"keccak256": "0x85a45f3f10014a0f8be41157a32b6a5f905753ea64a4b64e29fc12b7deeecf39",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c3c74009ce36136b36c77c23935b8e4a7b4f253be2da2be4fb4a916b1ce43743",
+				"dweb:/ipfs/QmcH36v3iN7SJJuF73AunLR2LtNxhVJ1wm63ph4dPZ4pcL"
+			]
+		},
+		"@openzeppelin/contracts/utils/cryptography/ECDSA.sol": {
+			"keccak256": "0xeed0a08b0b091f528356cbc7245891a4c748682d4f6a18055e8e6ca77d12a6cf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ba80ba06c8e6be852847e4c5f4492cef801feb6558ae09ed705ff2e04ea8b13c",
+				"dweb:/ipfs/QmXRJDv3xHLVQCVXg1ZvR35QS9sij5y9NDWYzMfUfAdTHF"
+			]
+		},
+		"@openzeppelin/contracts/utils/cryptography/SignatureChecker.sol": {
+			"keccak256": "0x6b11eb41a228cca35d4b662b4df69fcd75192851365102690f57b2ac01e83fe6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ab006a2983ed350d2af21ddcdd835dcae3b8340086cc4d088460da5abd041f69",
+				"dweb:/ipfs/QmbEacDhkJZiGrgzLjB4pNtE8Z1uudjDw1DvcDUTVQFsLG"
+			]
+		},
 		"UmiverseVerifyV2.sol": {
-			"keccak256": "0x3bcdf754b63fce1dcb1bdd77b8d069704044afe80cc3f1b4f93492ef3773f723",
+			"keccak256": "0xd0acd8a10399e6f5bd9977cb74c9c6795af0124d7f24a03f7de699224c4aef6e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://dd5ba210ab190e64cde0c86dd52c4926876f99547e1bd6ba0a8e665d95cd4451",
-				"dweb:/ipfs/QmY5eD2KeUMCLQYBkkHbLospZd8csBacY7ztsqiXiZgV51"
-			]
-		},
-		"lib/Signature.sol": {
-			"keccak256": "0x91841d397bd08562a21feb9ae26a27ecccab298f34d4beba24af671700e79865",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://eeb303b2f836fd270682c843bfcced7b9fafba2977c83cdf64681f89da8cd829",
-				"dweb:/ipfs/QmR5DdKBs8Qrc4TsWLW7Wr2SpAeARhD8dXzhWgPRJD2WRs"
-			]
-		},
-		"lib/Strings.sol": {
-			"keccak256": "0xfb31b9639f8b517edc4f6b1f5ddc44e46b0051facb4583403493b5e29498151a",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://ed7e24df6aee3826db38b20c489116fe706c09d34a690a5aba5f50023d7b163d",
-				"dweb:/ipfs/QmZsBVwD4iU5Q4WTh6sYQMewhgeA7NgrswRyGaZHwKNPZX"
+				"bzz-raw://1b3d873216e10c2f2b2400cf2affa26055a4e1f17038c2fec178a58030ae89d3",
+				"dweb:/ipfs/QmYazcbibLrP31phJvF8m6EMYVmf1n255JcAe1voazbh5J"
 			]
 		}
 	},

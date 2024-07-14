@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.25+commit.b61c2a91"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -557,7 +557,7 @@
 		"compilationTarget": {
 			"UmiversePaymentV2.sol": "UmiversePaymentV2"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -586,11 +586,11 @@
 			]
 		},
 		"UmiversePaymentV2.sol": {
-			"keccak256": "0x555b42601982df8c81758a35ea1c7924790e78e90007c4b6ce05ff4c1f2eb69d",
+			"keccak256": "0xcf9cd9ddcaba11410e138d7b40bcf485db2dcd6c88eeb8cc3826986280328a98",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c28fbdc18627a696175af03fe764b3847fedb6b6cb06b28d73a5e75f48dd0f08",
-				"dweb:/ipfs/QmT6Xkasf8Cdu1Q7wSS1A9DP87aPfscb6UUMn7f6mBogdT"
+				"bzz-raw://5eefdc169697710cd9967a34fe58f852eace2d5d1bd52867d21c3a92a60dcd4c",
+				"dweb:/ipfs/QmPPJKcCwHxoQZj86Yxyg6VDyvS9ttAySaLCyomTo3oR4L"
 			]
 		},
 		"lib/Ownable.sol": {

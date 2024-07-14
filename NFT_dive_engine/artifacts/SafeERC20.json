@@ -1,0 +1,102 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "60556032600b8282823980515f1a607314602657634e487b7160e01b5f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f80fdfea264697066735822122092593c4cdd6c4f58bc53d5ee42e23f1f5bdf809fff62cc8aaab5b4da87c37d4a64736f6c63430008140033",
+			"opcodes": "PUSH1 0x55 PUSH1 0x32 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH0 BYTE PUSH1 0x73 EQ PUSH1 0x26 JUMPI PUSH4 0x4E487B71 PUSH1 0xE0 SHL PUSH0 MSTORE PUSH0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST ADDRESS PUSH0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP3 MSIZE EXTCODECOPY 0x4C 0xDD PUSH13 0x4F58BC53D5EE42E23F1F5BDF80 SWAP16 SELFDESTRUCT PUSH3 0xCC8AAA 0xB5 0xB4 0xDA DUP8 0xC3 PUSH30 0x4A64736F6C63430008140033000000000000000000000000000000000000 ",
+			"sourceMap": "13565:5019:0:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;13565:5019:0;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "730000000000000000000000000000000000000000301460806040525f80fdfea264697066735822122092593c4cdd6c4f58bc53d5ee42e23f1f5bdf809fff62cc8aaab5b4da87c37d4a64736f6c63430008140033",
+			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP3 MSIZE EXTCODECOPY 0x4C 0xDD PUSH13 0x4F58BC53D5EE42E23F1F5BDF80 SWAP16 SELFDESTRUCT PUSH3 0xCC8AAA 0xB5 0xB4 0xDA DUP8 0xC3 PUSH30 0x4A64736F6C63430008140033000000000000000000000000000000000000 ",
+			"sourceMap": "13565:5019:0:-:0;;;;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "17000",
+				"executionCost": "96",
+				"totalCost": "17096"
+			},
+			"internal": {
+				"_callOptionalReturn(contract IERC20,bytes memory)": "infinite",
+				"_callOptionalReturnBool(contract IERC20,bytes memory)": "infinite",
+				"forceApprove(contract IERC20,address,uint256)": "infinite",
+				"safeDecreaseAllowance(contract IERC20,address,uint256)": "infinite",
+				"safeIncreaseAllowance(contract IERC20,address,uint256)": "infinite",
+				"safeTransfer(contract IERC20,address,uint256)": "infinite",
+				"safeTransferFrom(contract IERC20,address,address,uint256)": "infinite"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "spender",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "currentAllowance",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "requestedDecrease",
+					"type": "uint256"
+				}
+			],
+			"name": "SafeERC20FailedDecreaseAllowance",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				}
+			],
+			"name": "SafeERC20FailedOperation",
+			"type": "error"
+		}
+	]
+}

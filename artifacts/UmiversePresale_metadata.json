@@ -627,11 +627,11 @@
 			]
 		},
 		"UmiversePresale.sol": {
-			"keccak256": "0x04de168b6ad70118b5f0b8cdb0d35a75cbcd2a7b34440cadcdf75010cec6adc8",
+			"keccak256": "0x47016ba9764b4da7a6b5c91e7148f31124d3bd9e77ca108a3ebe6c0a7969f97b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a0405cd632c4b31a48ff7fdfb324c4d302819cd135c0b479632b8a3b006877a9",
-				"dweb:/ipfs/QmPeBjEZrFMPhxQvbceEXhdWfP6th18rLa8KEKe5nGxUgz"
+				"bzz-raw://e2763bcf7fb4b700190da64f0472f3489fbc32cfb7ea65aef384760eafef2168",
+				"dweb:/ipfs/QmbvmJnx3BhF4X8eUz9bGGyvu1hx3esP9MqmmdAEEvUAFV"
 			]
 		},
 		"erc721a/contracts/ERC721A.sol": {

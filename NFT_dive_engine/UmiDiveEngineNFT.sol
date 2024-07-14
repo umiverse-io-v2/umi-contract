@@ -2,21 +2,21 @@
 pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "erc721a/contracts/ERC721A.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
-import "../lib/SafeMath.sol";
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
 import "./types/EngineNFTTypes.sol";
 
-contract UmiDiveEngineNFT is Ownable, ERC721A, EngineNFTTypes {
+contract UmiDiveEngineNFT is Ownable, ERC721Enumerable, EngineNFTTypes {
     using SafeERC20 for IERC20;
     using SafeMath for uint256;
-
-    // mapping(uint256 => uint256) public
+    using Strings for uint256;
 
     // metadata URI
     string private _baseTokenURI;
-    mapping(uint256 => uint256) public tokenMapper; //nftid mapping tokenid
-    mapping(uint256 => uint256) public tokenMapper2; //tokenid mapping nftid
+    mapping(uint256 => uint256) public tokenMapper; // nftid mapping tokenid
+    mapping(uint256 => uint256) public tokenMapper2; // tokenid mapping nftid
 
     mapping(string => EngineType) public engineTypes;
     mapping(uint256 => EngineNFT) public engineNFTs;
@@ -29,33 +29,35 @@ contract UmiDiveEngineNFT is Ownable, ERC721A, EngineNFTTypes {
     uint256 startTokenId = 0;
     address engine = address(0);
 
+    bool public mintingAllowed = true; // 新增变量，默认允许mint
+
     constructor(
         string memory _uri,
         string memory _name,
         string memory _symbol
-    ) Ownable(msg.sender) ERC721A(_name, _symbol) {
+    ) Ownable(msg.sender) ERC721(_name, _symbol) {
         _baseTokenURI = _uri;
-        saveEngineType("TB_0001", PartType.Turbine, 0, 0, 10, 100, 10000);
-        saveEngineType("TB_0001S", PartType.Turbine, 0, 0, 50, 102, 1000);
+        saveEngineType("TB-0001", PartType.Turbine, 0, 0, 10 * 1e6, 100, 10000);
+        saveEngineType("TB-0001S", PartType.Turbine, 0, 0, 50 * 1e6, 102, 1000);
 
-        saveEngineType("DT_FHK_00", PartType.DriveTrain, 40, 0, 25, 0, 10000);
-        saveEngineType("DT_SS_00", PartType.DriveTrain, 40, 0, 25, 0, 1000);
+        saveEngineType("DT-FHK-00", PartType.DriveTrain, 40, 0, 25 * 1e6, 0, 10000);
+        saveEngineType("DT-SS-00", PartType.DriveTrain, 40, 0, 25 * 1e6, 0, 1000);
 
         saveEngineType(
-            "CX_0001",
+            "CX-0001",
             PartType.Capacitor,
             0,
-            100,
-            50,
+            100 * 1e6,
+            50 * 1e6,
             0,
             10000000000
         );
         saveEngineType(
-            "CX_0001M",
+            "CX-0001M",
             PartType.Capacitor,
             0,
-            150,
-            80,
+            150 * 1e6,
+            80 * 1e6,
             0,
             100000000
         );
@@ -165,17 +167,13 @@ contract UmiDiveEngineNFT is Ownable, ERC721A, EngineNFTTypes {
         else return PartType.Capacitor;
     }
 
-    function _startTokenId() internal view virtual override returns (uint256) {
-        return 100000;
-    }
-
     modifier callerIsUser() {
         require(tx.origin == msg.sender, "The caller is another contract");
         _;
     }
 
     function getCurrentIndex() public view returns (uint256) {
-        return _nextTokenId();
+        return totalSupply();
     }
 
     function mint(
@@ -183,6 +181,7 @@ contract UmiDiveEngineNFT is Ownable, ERC721A, EngineNFTTypes {
         string memory engineName,
         address payToken
     ) public {
+        require(mintingAllowed, "Minting is not allowed"); // 检查 mintingAllowed 变量
         require(engine != address(0), "ENGINE_NOT_CONFIG");
         require(!nftExist[nftid], "nftid exist!!!");
         require(checkEngineTypeExist(engineName), "Engine not exist");
@@ -200,7 +199,7 @@ contract UmiDiveEngineNFT is Ownable, ERC721A, EngineNFTTypes {
         //TODO transfer usdt/usdc
         IERC20(payToken).safeTransferFrom(msg.sender, engine, price);
 
-        uint256 tokenId = _nextTokenId();
+        uint256 tokenId = totalSupply();
         saveEngineNFT(
             tokenId,
             engineType.partType,
@@ -215,13 +214,15 @@ contract UmiDiveEngineNFT is Ownable, ERC721A, EngineNFTTypes {
         tokenMapper[nftid] = tokenId;
         tokenMapper2[tokenId] = nftid;
         nftExist[nftid] = true;
-        _safeMint(address(msg.sender), 1);
+        _safeMint(msg.sender, tokenId);
     }
 
-    function dreaseDivePointCap(uint256 tokenId, uint256 amount)
-        public
-        onlyEngine
-    {}
+    function dreaseDivePointCap(uint256 tokenId, uint256 amount) public onlyEngine {
+        require(checkEngineNFTsExist(tokenId), "Engine NFT does not exist");
+        EngineNFT storage engineNFT = engineNFTs[tokenId];
+        require(engineNFT.divepointCapLeft >= amount, "Insufficient dive point cap");
+        engineNFT.divepointCapLeft = engineNFT.divepointCapLeft.sub(amount);
+    }
 
     function setBaseURI(string calldata baseURI) external onlyOwner {
         _baseTokenURI = baseURI;
@@ -231,21 +232,6 @@ contract UmiDiveEngineNFT is Ownable, ERC721A, EngineNFTTypes {
         return _baseTokenURI;
     }
 
-    function tokenURI(uint256 tokenId)
-        public
-        view
-        virtual
-        override
-        returns (string memory)
-    {
-        if (!_exists(tokenId)) revert URIQueryForNonexistentToken();
-
-        string memory baseURI = _baseURI();
-        return
-            bytes(baseURI).length != 0
-                ? string(abi.encodePacked(baseURI, _toString(tokenId)))
-                : "";
-    }
 
     function redeem(uint256 tokenId) external onlyOwner {
         _burn(tokenId);
@@ -253,5 +239,20 @@ contract UmiDiveEngineNFT is Ownable, ERC721A, EngineNFTTypes {
 
     function getEngineNFT(uint256 id) public view returns (EngineNFT memory) {
         return engineNFTs[id];
+    }
+
+    // 新增方法：获取用户拥有的所有NFT的tokenIds
+    function tokensOfOwner(address owner) external view returns (uint256[] memory) {
+        uint256 tokenCount = balanceOf(owner);
+        uint256[] memory tokenIds = new uint256[](tokenCount);
+        for (uint256 i = 0; i < tokenCount; i++) {
+            tokenIds[i] = tokenOfOwnerByIndex(owner, i);
+        }
+        return tokenIds;
+    }
+
+    // 新增方法：设置mintingAllowed变量
+    function setMintingAllowed(bool _allowed) external onlyOwner {
+        mintingAllowed = _allowed;
     }
 }

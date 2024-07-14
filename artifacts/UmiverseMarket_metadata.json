@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.25+commit.b61c2a91"
+		"version": "0.8.20+commit.a1b79de6"
 	},
 	"language": "Solidity",
 	"output": {
@@ -760,7 +760,7 @@
 		"compilationTarget": {
 			"UmiverseMarket.sol": "UmiverseMarket"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -805,11 +805,11 @@
 			]
 		},
 		"UmiverseMarket.sol": {
-			"keccak256": "0x9a1c75dd6b293333e4321b48f24ce2b7d4e727146f15e813030532e0ae5eba89",
+			"keccak256": "0x36390b171ef7d0e8acd9dd5a307f1f9bf783b1cb91a4fd3ec89753013a3160bc",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4a05aa0e520ee0c9133c15c901452b7433e4667d487b6fd583aa068bf3cc7cc4",
-				"dweb:/ipfs/Qmbh7Yna3MiYnTArzFkXhEqcdwrnXD3gGGSY1xRuA6AkCQ"
+				"bzz-raw://1a44ec16199cb387555c8be46f2dcdc878cec06689825c2d95783accc0e6b0db",
+				"dweb:/ipfs/QmRV6p4SmG5TMijKRUxjrTDrmQezoPZhYnTz7svREk5y4s"
 			]
 		},
 		"lib/Context.sol": {
